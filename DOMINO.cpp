@@ -39,4 +39,5 @@ int main(){
     }
     flip(0,a,N);
     cout<< min_diference;
+    return 0;
 }
