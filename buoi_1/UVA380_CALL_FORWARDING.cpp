@@ -10,7 +10,6 @@ void print_time(short int x){
 short int setups[50][4]; // source , time , duration, target
 short int time_call[50], extension[50];
 short int used[50];
-
 short int switch_to; // final extension system switch to
 
 int switch_call(short int extension, short int time, short int Sum_of_set){
@@ -22,7 +21,7 @@ int switch_call(short int extension, short int time, short int Sum_of_set){
             used[set] = 1;
             switch_to = setups[set][3];
             switch_call(setups[set][3],time,Sum_of_set);
-            // used[set] = 0;
+            used[set] = 0;
         }
     }
 }
@@ -42,6 +41,7 @@ int main(){
                 setups[count][0]=temp;
                 cin >> setups[count][1] >> setups[count][2] >> setups[count][3];
                 count++;
+                // used[count]=0;
             }else break;
         }while(true);
         do{

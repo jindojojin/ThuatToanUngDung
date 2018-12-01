@@ -1,0 +1,54 @@
+1' Cho xâu A liệt kê mọi xâu của A  
+1'' Cho xâu A(m), B(n) là con của xâu A không
+1 Cho xâu a, xâu b => xâu con dài nhất của a và b ( LCS   Longest common sequence)
+1) LCS 
+A(m)               B(n)
+xét các tiền tố của xâu a và b Ai Aj
+hàm f(i,j) là tính dộ dài của xâu con chung dài nhất của i kí tự đầu của xâu a và j kí tự đầu của xâu B
+A --------------i
+B -------j
+
+A[i] = B[j] = c
+=> xâu con chung dài nhất có độ dài
+f(i,j) =1+ f(i-1, j-1)
+
+A[i] = b , B[j] =d  => 3 th 
+th1: f(i-1,j) ;  // 
+th2: f(i,j-1);
+th3: f(i-1,j-1); // bỏ vì luôn nhỏ nhất
+===> f(i,j) = max(f(i-1,j); f(i,j-1)); ( ảnh chụp trong evernote)
+
+
+Bài toán với 3 xâu : 
+
+Bài toán xâu đối xứng:
+Cho 1 xâu -> xóa đi ít kí tự nhất để xâu còn lại là xâu đối xứng( áp dụng LCS)
+
+Bài toán 2: Cho 1 dãy A[n] xóa như thế nào để được dãy không giảm và dài nhất (LIS Longest incresing sequence)
+gọi f(i) là độ dài của xâu con tăng dài nhất nhưng kết thúc ở vị trí A[i]
+xét a1 a2 -> ai 
+xét aj đằng trước a[i] sao cho f(j) là lớn nhất
+f(i) = max(f(j)) + 1;
+j t/m : 1<=j<=i , A[j] <= A[i];
+
+
+Bài toán dãy lồi: dãy tăng -> giảm
+Tìm độ dài của dãy lồi dài nhất
+f(i) độ dài của dãy tăng dài nhất từ 1->i
+g(i) đồ dài của dãy giảm dài nhất từ i->n
+=> kết quả = Max(f(i), g(i))
+
+Bài toán ba lô:
+khổi lượng A[n]
+giá trị B[n]
+-> xét f(i,j)   i đồ vật đầu tiên, j là khối lượng của ba lô
+có đồ vậy i = f(i,j) = ci + f(i-1, j-a[i]) (1)
+không có đồ vật i f(i,j) = f(i-1,j)        (2)
+
+result = max(1;2);
+
+
+Cho 1 dãy n số;
+tính tổng các phần tử từ i -> j
+Nếu có M truy vấn này??  f(i,j) = Si - S(j-1)
+

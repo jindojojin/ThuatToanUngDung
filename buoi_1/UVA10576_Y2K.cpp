@@ -28,6 +28,7 @@ int sum_4_previous_months(int i){
 void back(int i){
     if(i==12) calculate_amount();
     else{
+            
         if(i<4 || (i>=4 && sum_4_previous_months(i) - d < 0)){
             Posts[i]= -d;   
             back(i+1);
