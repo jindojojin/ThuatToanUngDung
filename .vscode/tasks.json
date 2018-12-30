@@ -6,7 +6,7 @@
         {
             "label": "c++",
             "type": "shell",
-            "command": "g++ ${file} -o ${fileBasenameNoExtension}.out",
+            "command": "g++ ${file} -o ${workspaceFolder}\\${fileBasenameNoExtension}.exe",
             "group": {
                 "kind": "build",
                 "isDefault": true
