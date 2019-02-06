@@ -1,31 +1,40 @@
 #include <iostream>
 #include <algorithm>
 #include <stdlib.h>
-#include <string>
+#include <math.h>
+#include <vector>
 #include <fstream>
+#include <stack>
+#include <map>
 #define for(i,k,n) for(int i=k;i<n;i++)
+using namespace std;
+
 #define cin filein
 #define cout fileout
-using namespace std;
 ifstream filein("in.dat");
 ofstream fileout("out.dat");
+
+
 void setup_algorithm();
 int main(){
     setup_algorithm();
+
     cin.close();
     cout.close();
+    
     return 0;
 }
-int n;
-int p[1000],s[1000];
+int N,R;
+int C[1000];
 void setup_algorithm(){
-    cin>>n;
-    for(i,0,n) cin>>p[i];
-    for(i,0,n) cin>>s[i];
-    sort(p,p+n);
-    sort(s,s+n);
-    int result=0;
-    for(i,0,n)
-        result+= abs(p[i]-s[i]);
-    cout<<result;
+    while(cin>>N){
+        cin>>R;
+        if(N==0 && R==0) return;
+        for(i,0,N) cin>>C[i];
+        int u,v;
+        for(i,0,N) {
+            cin>>u>>v;
+            
+        };
+    }
 }
