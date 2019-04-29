@@ -13,22 +13,22 @@ using namespace std;
 
 #define cin filein
 #define cout fileout
-ifstream filein("in.dat");
+ifstream filein("fin.dat");
 ofstream fileout("out.dat");
 
 int m,n,k;
 map<char,int> dict;
 
-int A[100][100];
+int A[1000][1000];
 void setup_algorithm();
 int main(){
     dict['.']=-1;
     dict['*']=-2;
     dict['#']=-3;
     dict['N']=0; //north
-    dict['L']=1; //east
+    dict['L']=3; //east
     dict['S']=2; //south
-    dict['O']=3; //west
+    dict['O']=1; //west
 
     setup_algorithm();
 
@@ -40,11 +40,11 @@ int main(){
 
 int sti,stj,dir;//start(i) start(j) direction
 int sum_star;
-int dx[4]={0,1,0,-1};
+int dx[4]={0,-1,0,1};
 int dy[4]={-1,0,1,0};
 void ch_dir(char X){
-    if(X=='E') dir=dir-1;
-    else dir=dir+1;
+    if(X=='E') dir=dir+1; //re trai , bắc -> tây
+    else dir=dir-1;
     if(dir>3) dir=0;
     if(dir<0) dir=3;
 }
